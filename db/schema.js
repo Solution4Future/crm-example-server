@@ -29,9 +29,9 @@ var Client = describe('Client', function () {
 var Action = describe('Action', function () {
     property('type,', String);
     property('description,', String);
-    property('done_date', Date);
+    property('clientId,', Number);
+    
 });
-Client.hasMany(Action,   {as: 'actions',  foreignKey: 'clientId'});
 
-
+Client.hasMany(Action, {as: 'action',  foreignKey: 'clientId'});
 Action.belongsTo(Client, {as: 'client', foreignKey: 'clientId'});
