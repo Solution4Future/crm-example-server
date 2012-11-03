@@ -1,0 +1,11 @@
+<div class="page-header">
+    <h1>New client</h1>
+</div>
+
+<% formFor(client, {action: pathTo.clients, method: 'POST', id: "client-form", class: 'form-horizontal'}, function (form) { %>
+    <%- partial('clients/form.ejs', {locals: {form: form, client: client}}) %>
+    <div class="form-actions">
+        <%- form.submit('<i class="icon-ok icon-white"></i> Create client', {class: 'btn btn-primary'}) %> or
+        <%- linkTo('Cancel', pathTo.clients, {class: 'btn'}) %>
+    </div>
+<% });%>

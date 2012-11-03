@@ -1,0 +1,20 @@
+<div class="page-header">
+    <h1>Details of action</h1>
+</div>
+
+<table class="table table-bordered">
+    <tbody>
+        <tr><th>type,</th><td><%= action.type, %></td></tr>
+
+        <tr><th>description,</th><td><%= action.description, %></td></tr>
+
+        <tr><th>done_date</th><td><%= action.done_date %></td></tr>
+    </tbody>
+</table>
+
+<div class="well">
+    <%- link_to('<i class="icon-edit icon-white"></i> Edit', pathTo.edit_action(action), {class: 'btn btn-primary'}) %>
+    <%- link_to('<i class="icon-remove icon-white"></i> Delete', pathTo.action(action), {class: 'btn btn-danger', method: 'delete', remote: true, jsonp: '(function (u) { location.href = u; })'}) %>
+    or
+    <%- link_to('Back to index', pathTo.actions) %>
+</div>

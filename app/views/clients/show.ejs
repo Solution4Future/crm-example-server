@@ -1,0 +1,20 @@
+<div class="page-header">
+    <h1>Details of client</h1>
+</div>
+
+<table class="table table-bordered">
+    <tbody>
+        <tr><th>name</th><td><%= client.name %></td></tr>
+
+        <tr><th>address</th><td><%= client.address %></td></tr>
+
+        <tr><th>phone</th><td><%= client.phone %></td></tr>
+    </tbody>
+</table>
+
+<div class="well">
+    <%- link_to('<i class="icon-edit icon-white"></i> Edit', pathTo.edit_client(client), {class: 'btn btn-primary'}) %>
+    <%- link_to('<i class="icon-remove icon-white"></i> Delete', pathTo.client(client), {class: 'btn btn-danger', method: 'delete', remote: true, jsonp: '(function (u) { location.href = u; })'}) %>
+    or
+    <%- link_to('Back to index', pathTo.clients) %>
+</div>

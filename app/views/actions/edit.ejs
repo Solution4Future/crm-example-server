@@ -1,0 +1,10 @@
+<div class="page-header"><h1>Edit action</h1></div>
+
+<% formFor(action, {action: pathTo.action(action), method: 'PUT', id: "action-form", class: 'form-horizontal'}, function (form) { %>
+    <%- partial('actions/form.ejs', {locals: {form: form, action: action}}) %>
+    <div class="form-actions">
+        <%- form.submit('<i class="icon-ok icon-white"></i> Update action', {class: 'btn btn-primary'}) %> or
+        <%- linkTo('Cancel', pathTo.action(action), {class: 'btn'}) %>
+    </div>
+<% });%>
+
