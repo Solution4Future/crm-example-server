@@ -1,9 +1,12 @@
 dump.rdb
 lib-cov
+*.seed
 *.log
 *.csv
 *.out
 *.pid
+*.dat
+*.gz
 pids
 logs
 results
@@ -16,4 +19,3 @@ log/*.log
 coverage.html
 .settings
 doc
-
