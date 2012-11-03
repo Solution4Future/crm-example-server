@@ -9,7 +9,7 @@ action('new', function () {
 });
 
 action(function create() {
-    Client.create(req.body.Client, function (err, client) {
+    Client.create(req.body, function (err, client) {
         if (err) {
             flash('error', 'Client can not be created');
             send('new', {
