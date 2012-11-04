@@ -33,7 +33,7 @@ action(function index() {
             actions_final[index]['id'] = item['id'];
             actions_final[index]['type'] = item['type'];
             actions_final[index]['description'] = item['description'];
-            actions_final[index]['clientId'] = {id: item['clientd']};
+            actions_final[index]['clientId'] = {id: item['clientId']};
             actions_final[index]['clientId2'] = item['clientId'];
             });
         send({
