@@ -43,7 +43,7 @@ action(function edit() {
 });
 
 action(function update() {
-    this.client.updateAttributes(body.Client, function (err) {
+    this.client.updateAttributes(req.body, function (err) {
         if (!err) {
             flash('info', 'Client updated');
             redirect(path_to.client(this.client));
