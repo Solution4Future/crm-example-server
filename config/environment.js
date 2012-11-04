@@ -1,5 +1,18 @@
 var express = require('express');
-var MongoStore = require('connect-mongo')(express);
+RedisStore = require('connect-redis')(express);
+
+var redisOpts;
+if (process.env['REDISTOGO_URL']) {
+    var url = require('url').parse(process.env['REDISTOGO_URL']);
+    var redisOpts = {
+        port: url.port,
+        host: url.hostname,
+        pass: url.auth.split(':')[1]
+    };
+} else {
+    redisOpts = {};
+}
+
 
 app.configure(function(){
     var cwd = process.cwd();
@@ -11,7 +24,7 @@ app.configure(function(){
     app.set('cssDirectory', '/stylesheets/');
     app.use(express.bodyParser());
     app.use(express.cookieParser('secret'));
-    app.use(express.session({secret: 'secret'},new MongoStore({ db: 'mongodb://heroku:1d5c275dc705b0eb1e28ae318faacfee@alex.mongohq.com:10097/app8947109' })));
+    app.use(express.session({secret: 'secret', store: new RedisStore(redisOpts)}));    
     app.use(express.methodOverride());
     app.use(app.router);
 });
