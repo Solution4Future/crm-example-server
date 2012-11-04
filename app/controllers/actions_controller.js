@@ -27,6 +27,10 @@ action(function create() {
 action(function index() {
     this.title = 'Actions index';
     this.client.action(function (err, actions) {
+        actions.forEach(function(item, index){
+            actions[index]['clientId2'] = item['clientId'];
+            actions[index]['clientId'] = {id: item['clientId']};
+            });
         send({
             actions: actions
         });
