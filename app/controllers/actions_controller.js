@@ -32,6 +32,8 @@ action(function index() {
             actions_final[index] = {};
             actions_final[index]['id'] = item['id'];
             actions_final[index]['type'] = item['type'];
+            console.log(actions[index]['clientId']);
+            console.log(item['clientId']);
             actions_final[index]['description'] = item['description'];
             actions_final[index]['clientId'] = {id: actions[index]['clientId']};
             actions_final[index]['clientId2'] = actions[index]['clientId'];
