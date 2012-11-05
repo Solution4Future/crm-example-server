@@ -28,6 +28,7 @@ action(function index() {
     this.title = 'Actions index';
     this.client.action(function (err, actions) {
         var actions_final = [];
+	console.log(actions);
         actions.forEach(function(item, index){
             actions_final[index] = {};
             actions_final[index]['id'] = item['id'];
