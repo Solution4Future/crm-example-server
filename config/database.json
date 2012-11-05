@@ -1,5 +1,5 @@
 { "development":
- { "driver":   "mongoose"
+ { "driver":   "mongodb"
   , "url":      "mongodb://heroku:1d5c275dc705b0eb1e28ae318faacfee@alex.mongohq.com:10097/app8947109"
   }
 
