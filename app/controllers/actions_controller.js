@@ -28,14 +28,13 @@ action(function index() {
     this.title = 'Actions index';
     this.client.action(function (err, actions) {
         var actions_final = [];
-	console.log(actions);
         actions.forEach(function(item, index){
             actions_final[index] = {};
             actions_final[index]['id'] = item['id'];
             actions_final[index]['type'] = item['type'];
             actions_final[index]['description'] = item['description'];
-            actions_final[index]['clientId'] = {id: item['clientId']};
-            actions_final[index]['clientId2'] = item['clientId'];
+            actions_final[index]['clientId'] = {id: actions[index]['clientId']};
+            actions_final[index]['clientId2'] = actions[index]['clientId'];
             });
         send({
             actions: actions_final
