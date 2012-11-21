@@ -18,7 +18,7 @@ action(function create() {
             });
         } else {
             flash('info', 'Client created');
-            redirect(path_to.clients());
+            send(client);
         }
     });
 });
@@ -46,7 +46,7 @@ action(function update() {
     this.client.updateAttributes(req.body, function (err) {
         if (!err) {
             flash('info', 'Client updated');
-            redirect(path_to.client(this.client));
+            send(this.client);
         } else {
             flash('error', 'Client can not be updated');
             this.title = 'Edit client details';
@@ -62,7 +62,7 @@ action(function destroy() {
         } else {
             flash('info', 'Client successfully removed');
         }
-        send("'" + path_to.clients() + "'");
+        send("'DELETED'");
     });
 });
 

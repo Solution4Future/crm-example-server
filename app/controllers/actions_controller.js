@@ -19,7 +19,7 @@ action(function create() {
             });
         } else {
             flash('info', 'Action created');
-            send();
+            send(action);
         }
     });
 });
@@ -58,7 +58,7 @@ action(function update() {
     this.action.updateAttributes(body.Action, function (err) {
         if (!err) {
             flash('info', 'Action updated');
-            send();
+            send(this.action);
         } else {
             flash('error', 'Action can not be updated');
             this.title = 'Edit action details';
@@ -74,7 +74,7 @@ action(function destroy() {
         } else {
             flash('info', 'Action successfully removed');
         }
-        send();
+        send("DELETED");
     });
 });
 
